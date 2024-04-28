@@ -9,7 +9,7 @@
                 Console.WriteLine("Raw format correcter is used to correct the rawFormat value of Armored Core 4 BND3 archives.");
                 Console.WriteLine("Yabber cannot repack this value correctly.");
                 Console.WriteLine("Drag and drop a regulation BND3 file after changes have been made onto the exe of this program.");
-                Console.WriteLine("You do not need to use this program for regulation.bin, the hash calculator will handle this.");
+                Console.WriteLine("Do not use this on regulation.bin, as the rawFormat value is different and hash calculator will handle that.");
                 Console.WriteLine("Press any key to close this program, or click the exit button.");
                 Console.ReadKey();
             }
@@ -28,7 +28,7 @@
                 var file = File.ReadAllBytes(arg);
 
                 // Correct the rawFormat.
-                file[12] = 228;
+                file[12] = 224;
 
                 // Write the file back.
                 File.WriteAllBytes(arg, file);
